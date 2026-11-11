@@ -2,6 +2,31 @@
 
 Siden sidst is Danish news that remembers and follows up. Readers follow concrete questions, retain their own position in each case, and return to documented developments instead of an endless sequence of disconnected headlines. The same Scandinavian React interface runs on GitHub Pages and the original Site. A Sites-hosted Cloudflare Worker stores the shared case history, source evidence, review records, email waitlist and feedback in D1.
 
+## Product promise: give attention back
+
+**Bliv klogere. Ikke hængende.** — **Hele historien. Fra A til Z. På din tid.**
+
+The product should help readers understand a case and get on with their day. A–Z means preserving the background, current answer, open questions and eventual documented outcome; it does not promise that every case is already resolved. The finite case overview, original sources and explicit reading position make that promise concrete.
+
+- A case card offers changes only when it has new revisions; otherwise it opens the existing history.
+- A fresh, unfiltered overview with active followed cases and no pending briefings ends with **“Du er ajour. Resten af dagen er din.”** A quiet history link remains available, without a recommendation loop.
+- Paused cases, a failed refresh and cached data have distinct messages. They are never presented as proof that a reader is currently caught up.
+- After acknowledging the edition they opened, readers can choose **“Færdig for nu”** to close it. A newer edition remains unread.
+- The hero, method panel and footer explain the same three promises: a complete case trajectory, no attention traps, and material insight with minimal unnecessary effort.
+
+### Measures of success
+
+Use these as product goals for voluntary beta research, not as claims of measured results or new tracking:
+
+| Goal | Useful evaluation |
+| --- | --- |
+| Reach sufficient understanding quickly | Observe how long a tester needs to explain the current status and next step accurately; speed alone is not success. |
+| Understand the case over time | Ask a tester to distinguish the background, latest change and remaining uncertainty. |
+| Surface material changes reliably | Audit documented changes for relevance, missed developments, duplicate updates, corrections and time to publication. |
+| Reduce unnecessary searching | Ask whether the tester needed to reconstruct the history elsewhere and which information was missing. |
+
+Time on site, pageviews, clicks, streaks and return frequency are not optimization targets. This release adds no analytics collection, engagement scoring, browser notifications or email delivery.
+
 ## Case product
 
 - **Siden sidst / Mine sager / Opdag:** follow, prioritize and pause individual cases; filter by topic, geography and status.
