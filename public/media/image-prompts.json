@@ -1,0 +1,19 @@
+{
+  "createdAt": "2026-11-10",
+  "method": "built-in image generation",
+  "purpose": "Generic editorial topic illustrations; not images of reported events",
+  "assets": [
+    {
+      "file": "nordic-city.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide 16:9 editorial topic illustration for a refined Danish news website. Create a beautiful generic Copenhagen-inspired northern European waterfront: restrained rust-red brick warehouses and contemporary Scandinavian architecture, cool petroleum-blue harbour water, a clean cycle path, a few tiny distant cyclist silhouettes with no discernible faces. A crisp winter morning with soft low sunlight, atmospheric pale northern sky, authentic masonry and rippling water, understated documentary photography aesthetic, balanced architectural composition, sophisticated quiet energy. It is an illustrative imagined scene, not a specific news event. No text, no logos, no watermarks, no close-up or identifiable people. Wide landscape frame, approximately 16:9."
+    },
+    {
+      "file": "nordic-climate.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide 16:9 editorial topic illustration for a refined Danish news website. Create a sophisticated northern European coastal landscape with a small line of elegant offshore wind turbines receding into pale sea mist, low grassy dunes in the foreground, calm petroleum-blue water and muted sage-green coastal vegetation. Soft silver winter daylight, restrained documentary photography with rich natural texture, balanced wide composition and strong sense of northern space. Not a specific news event, a generic editorial illustration of climate and energy. No text, no branding, no watermark, no people. Wide landscape frame, approximately 16:9."
+    },
+    {
+      "file": "nordic-mobility.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide 16:9 editorial topic illustration for a refined Danish news website. Create a beautiful modern northern European commuter rail station at blue hour: clean Scandinavian timber, steel and glass architecture, one sleek unbranded train with softly glowing warm amber windows beside an orderly platform. Cool blue and petroleum shadows, subtle reflections on lightly damp paving, restrained cinematic composition grounded in realistic architectural photography. Generic imagined station, not a specific news event. No text, no station names, no logos, no watermarks, no identifiable people. Wide landscape frame, approximately 16:9."
+    }
+  ]
+}
