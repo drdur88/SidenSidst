@@ -216,11 +216,11 @@ export default function CaseApp({ basePath, apiOrigin, onNewsFeed }: { basePath:
         <div className="c-hero-image">
           <img src={`${assets}media/nordic-mobility.webp`} alt="Emneillustration af et tog ved en nordisk station" fetchPriority="high"/>
           <div className="c-hero-copy">
-            <span className="c-eyebrow">NYHEDER MED HUKOMMELSE</span>
-            <h1>Bliv klogere.<br/>Ikke hængende.</h1>
-            <p className="c-hero-promise">Hele historien. Fra A til Z. På din tid.</p>
-            <p className="c-hero-explainer">{noFollowed ? "Vi samler historien, følger udviklingen og viser, hvor sagen står. Du får det væsentlige og kan komme videre med din dag." : "Her er det, der har ændret sig i dine sager, siden du sidst var ajour. Vi husker sammenhængen, så du slipper for at begynde forfra."}</p>
-            <button className="n-button n-button-light" onClick={() => navigate(noFollowed ? "discover" : "updates")}>Se hvad der er sket <ArrowRight size={16}/></button>
+            <span className="c-eyebrow">SIDEN SIDST · NYHEDER MED HUKOMMELSE</span>
+            <h1>Nyheder, der<br/>husker for dig.</h1>
+            <p className="c-hero-promise">Følg de sager, der betyder noget for dig.</p>
+            <p className="c-hero-explainer">{noFollowed ? "Vi samler historien, følger udviklingen og viser, hvad der har ændret sig siden sidst." : "Vi husker, hvor du slap, og viser de væsentlige ændringer i de sager, du følger."}</p>
+            <button className="n-button n-button-light" onClick={() => navigate(noFollowed ? "discover" : "updates")}>Se dit overblik <ArrowRight size={16}/></button>
             <span className="c-hero-assurance">Ingen clickbait. Ingen endeløs scrolling.</span>
           </div>
           <span className="c-hero-credit">Genereret emneillustration</span>

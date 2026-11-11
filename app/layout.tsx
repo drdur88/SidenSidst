@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./news.css";
 
 export const metadata: Metadata = {
-  title: "Siden sidst — Bliv klogere. Ikke hængende.",
-  description: "Hele historien. Fra A til Z. På din tid. Følg sagerne, forstå de væsentlige ændringer, og kom videre med din dag. Nyheder med hukommelse og opfølgning.",
+  title: "Siden sidst — Nyheder, der husker for dig.",
+  description: "Følg de sager, der betyder noget for dig. Siden sidst samler historien, følger udviklingen og viser, hvad der har ændret sig siden sidst.",
   robots: { index: false, follow: false },
   icons: {
     icon: "/favicon.svg",

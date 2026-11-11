@@ -4,9 +4,9 @@ Siden sidst is Danish news that remembers and follows up. Readers follow concret
 
 ## Product promise: give attention back
 
-**Bliv klogere. Ikke hængende.** — **Hele historien. Fra A til Z. På din tid.**
+**Nyheder, der husker for dig.** — Følg de sager, der betyder noget for dig. Vi samler historien, følger udviklingen og viser, hvad der har ændret sig siden sidst.
 
-The product should help readers understand a case and get on with their day. A–Z means preserving the background, current answer, open questions and eventual documented outcome; it does not promise that every case is already resolved. The finite case overview, original sources and explicit reading position make that promise concrete.
+The hero explains the product first: the news remembers the case context and the reader's place in it. The broader philosophy remains **“Bliv klogere. Ikke hængende.”** lower in the experience. A–Z means preserving the background, current answer, open questions and eventual documented outcome; it does not promise that every case is already resolved. The finite case overview, original sources and explicit reading position make that promise concrete.
 
 - A case card offers changes only when it has new revisions; otherwise it opens the existing history.
 - A fresh, unfiltered overview with active followed cases and no pending briefings ends with **“Du er ajour. Resten af dagen er din.”** A quiet history link remains available, without a recommendation loop.
