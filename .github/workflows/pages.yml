@@ -36,6 +36,8 @@ jobs:
         run: npm run test:feed
       - name: Check news sources and parser contracts
         run: npm run test:news
+      - name: Check case memory, history and editorial access
+        run: npm run test:cases
       - name: Build the static frontend
         run: npm run build:pages
         env:

@@ -1,4 +1,4 @@
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text, uniqueIndex, index } from "drizzle-orm/sqlite-core";
 
 // Registrations are unverified expressions of interest, not accounts.
 export const subscriptions = sqliteTable("beta_subscriptions", {
@@ -26,3 +26,40 @@ export const rateLimits = sqliteTable("rate_limits", {
   count: integer("count").notNull().default(0),
   expiresAt: integer("expires_at").notNull(),
 });
+
+// Public editorial case records. Personal reading positions stay on the guest's
+// device; the email waitlist is deliberately not an authentication identity.
+export const newsCases = sqliteTable("news_cases", {
+  id: text("id").primaryKey(),
+  metadataJson: text("metadata_json").notNull(),
+  bootstrapHash: text("bootstrap_hash").notNull(),
+  currentRevision: integer("current_revision").notNull().default(0),
+  createdAt: text("created_at").notNull(),
+});
+
+export const caseSources = sqliteTable("case_sources", {
+  id: text("id").primaryKey(),
+  caseId: text("case_id").notNull().references(() => newsCases.id),
+  sourceId: text("source_id").notNull(),
+  contentJson: text("content_json").notNull(),
+}, (table) => [uniqueIndex("case_sources_case_source_unique").on(table.caseId, table.sourceId)]);
+
+export const caseUpdates = sqliteTable("case_updates", {
+  id: text("id").primaryKey(),
+  caseId: text("case_id").notNull().references(() => newsCases.id),
+  updateId: text("update_id").notNull(),
+  revision: integer("revision").notNull(),
+  contentJson: text("content_json").notNull(),
+  recordedAt: text("recorded_at").notNull(),
+}, (table) => [
+  uniqueIndex("case_updates_case_revision_unique").on(table.caseId, table.revision),
+  uniqueIndex("case_updates_case_update_unique").on(table.caseId, table.updateId),
+]);
+
+export const caseChecks = sqliteTable("case_checks", {
+  id: text("id").primaryKey(),
+  caseId: text("case_id").notNull().references(() => newsCases.id),
+  checkedAt: text("checked_at").notNull(),
+  status: text("status").notNull(),
+  contentJson: text("content_json").notNull(),
+}, (table) => [index("case_checks_case_time_idx").on(table.caseId, table.checkedAt)]);

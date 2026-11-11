@@ -16,7 +16,8 @@
     "check:pages": "tsc --project tsconfig.pages.json --noEmit",
     "test:api": "node scripts/test-api.mjs",
     "test:feed": "node scripts/test-feed.mjs",
-    "test:news": "node scripts/test-news.mjs"
+    "test:news": "node scripts/test-news.mjs",
+    "test:cases": "node scripts/test-cases-reader.mjs && node scripts/test-case-store.mjs && node scripts/test-case-editor.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

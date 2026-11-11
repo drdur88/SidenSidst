@@ -46,6 +46,18 @@ class D1Statement {
 class SqliteD1 {
   constructor(db) { this.db = db; }
   prepare(sql) { return new D1Statement(this.db, sql); }
+  async batch(statements) {
+    this.db.exec('BEGIN IMMEDIATE');
+    try {
+      const results = statements.map(statement => {
+        const query = this.db.prepare(statement.sql);
+        if (query.columns().length) return { success: true, results: query.all(...statement.values), meta: { changes: 0 } };
+        const result = query.run(...statement.values);
+        return { success: true, results: [], meta: { changes: Number(result.changes), last_row_id: Number(result.lastInsertRowid) } };
+      });
+      this.db.exec('COMMIT'); return results;
+    } catch (error) { this.db.exec('ROLLBACK'); throw error; }
+  }
 }
 
 const migrationNames = (await readdir(path.join(project, 'drizzle'))).filter(name => name.endsWith('.sql')).sort();
@@ -125,6 +137,12 @@ test('real migrations and health handler work against the SQLite D1 adapter', as
   equal(result.body.ok, true);
   equal(count('beta_subscriptions'), 0);
   equal(count('beta_feedback'), 0);
+});
+
+test('health reports failure when a required case table has not been migrated', async () => {
+  sqlite.exec('DROP TABLE case_checks');
+  const result = await call('health', undefined, 'GET');
+  equal(result.status, 503); equal(result.body.ok, undefined);
 });
 
 test('subscription and feedback route modules expose no public read handler', async () => {
